@@ -45,7 +45,6 @@ public class CurrencyCalculationController {
 		CurrencyCalculationBean currentCalculationBean = currencyExchangeServiceProxy.retrieveCurrencyExchangeValue(from, to);
 		currentCalculationBean.setQuantity(quantity);
 		currentCalculationBean.setTotalCalculatedAmount(quantity.multiply(currentCalculationBean.getConversionMultiple()));
-		currentCalculationBean.setPort(Integer.parseInt(environment.getProperty("server.port")));
 		return currentCalculationBean;
 	}
 }
